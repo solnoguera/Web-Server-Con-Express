@@ -14,9 +14,13 @@ app.get('/', (req, res) => {
 
 //No hace falta poner el send con la ruta para que vaya porque creamos una CARPETA en public
 //Este codigo no lo va a ejecutar porque prioriza el public
-app.get('/hola-mundo', (req, res) => {
-    res.send('Hello World en su respectiva ruta') 
+app.get('/generic', (req, res) => {
+    res.sendFile( __dirname + '/public/generic.html')
   });
+
+app.get('/elements', (req, res) => {
+res.sendFile( __dirname + '/public/elements.html')
+});
 
 //El * es un comodin para devolver cuando ponen otra ruta que no esta declarada.
 //Lo mandamos a la ruta donde se encuentra el html que queremos mostrar.
